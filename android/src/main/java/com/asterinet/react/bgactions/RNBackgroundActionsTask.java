@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.content.pm.ServiceInfoaas
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -90,7 +91,7 @@ final public class RNBackgroundActionsTask extends HeadlessJsTaskService {
         // Create the notification
         final Notification notification = buildNotification(this, bgOptions);
 
-        startForeground(SERVICE_NOTIFICATION_ID, notification);
+        startForeground(SERVICE_NOTIFICATION_ID, notification, ServiceInfo.FOREGROUND_SERVICE_SYSTEM_EXEMPTED);
         return super.onStartCommand(intent, flags, startId);
     }
 
